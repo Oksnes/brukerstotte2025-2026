@@ -1,4 +1,4 @@
-# brukerstotte25-26
+# brukerstotte2025-2026
 repository for brukerstøtte faget
 
-Readme by tim
+Readme by Tim
