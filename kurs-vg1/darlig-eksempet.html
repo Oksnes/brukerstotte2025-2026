@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Min Side</title>
+<style>
+body {
+background: pink;
+font-family: Arial;
+}
+h1 {
+color: red;
+}
+div {
+border: 1px solid;
+padding: 5;
+margin: 5;
+}
+#button {
+background: yellow; color: blue; font-size: 30;
+}
+</style>
+</head>
+ 
+<body>
+ 
+    <h1>Velkommen til min side!!!</h1>
+    <p id="tekst">Her er litt tekst</p>
+ 
+    <div id="main">
+        <button id="button" onclick="doClick()">Trykk her</button>
+        <button onclick="doClick()">eller her</button>
+        <br><br>
+        <img src="bilde.png">
+    </div>
+ 
+<script>
+var counter = 0
+ 
+function doClick(){
+    counter++
+    document.getElementById("tekst").innerHTML = "Du har trykket " + counter + " ganger";
+    // noen ganger funker dette ikke
+    if(counter == 3){
+        alert("Du trykket tre ganger!!!")
+    }
+    // blanding av logikk og DOM
+    document.body.style.background = counter % 2 == 0 ? "lightblue" : "pink"
+}
+</script>
+ 
+<font size=7>Slutt på siden</font>
+<center>Laget av meg</center>
+ 
+</body>
+</html>
