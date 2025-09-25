@@ -83,15 +83,28 @@
       <figcaption>Et eksempelbilde</figcaption> <!--Undertekst for bilde-->
     </figure>
 
+    
     <div>
-      <form id="form1">
-          <input type="text" name="name1" id="name1" placeholder="Skriv inn et navn"><br>
-          <input type="text" name="name2" id="name2" placeholder="Skriv inn et annet navn"><br><br>
-          <button type="submit" id="form1btn">Submit</button>
-      </form>
-      <p id="result"></p>
+        <form id="form1"> <!--Id-en til form blir brukt i javascript-->
+            <input type="text" name="name1" id="name1" placeholder="Skriv inn et navn"><br>
+            <input type="text" name="name2" id="name2" placeholder="Skriv inn et annet navn"><br><br>
+            <button type="submit" id="form1btn">Submit</button>
+        </form>
+        <p id="result"></p>
     </div>
   </main>
+
+  <script>
+    document.getElementById("form1").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents page refresh
+    let name1 = document.getElementById("name1").value;
+    let name2 = document.getElementById("name2").value;
+    let navnforskjell = Math.abs(parseInt(name1.length) - parseInt(name2.length));
+
+    document.getElementById("result").innerText = "Forskjellen i lengde på navnene er: " + navnforskjell + " bokstaver.";
+    // alert("Forskjellen i lengde på navnene er: " + navnforskjell + " bokstaver.");
+});
+  </script>
   
 
   <footer>
