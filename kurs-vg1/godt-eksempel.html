@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Min Side</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: pink;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  header, main, footer {
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    color: red;
+  }
+
+  #main-content {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  button {
+    background-color: yellow;
+    color: blue;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: gold;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+</style>
+</head>
+
+<body>
+
+
+  <header> <!--Semantisk kode-->
+      <h1>Velkommen til min side!</h1>
+  </header>
+
+
+  <nav> <!--Semantisk kode-->
+    <ul>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+    </ul>
+  </nav>
+  
+
+  <main> <!--Semantisk kode-->
+    <p id="tekst">Her er litt tekst</p>
+    <button id="btn1">Trykk her</button>
+    <button id="btn2">eller her</button>
+
+    <figure> <!--Html konteiner for bilder og videoer-->
+      <img src="bilde.png" alt="Eksempelbilde">
+      <figcaption>Et eksempelbilde</figcaption> <!--Undertekst for bilde-->
+    </figure>
+  </main>
+  
+
+  <footer>
+      <p>Laget av meg</p>
+  </footer>
+
+
+  <script>
+    document.getElementById("btn1").addEventListener("click", updateCounter); //setter lytting på knappene
+    document.getElementById("btn2").addEventListener("click", updateCounter); //setter lytting på knappene
+    
+    let counter = 0; // teller for antall trykk
+
+    function updateCounter() {
+    counter++; //øker telleren med 1
+    const tekst = document.getElementById("tekst"); //henter elementet med id "tekst"
+    tekst.textContent = `Du har trykket ${counter} ganger`; //oppdaterer teksten med antall trykk
+
+    document.body.style.backgroundColor = counter % 2 === 0 ? "lightblue" : "pink"; //endrer bakgrunnsfarge basert på om telleren er partall eller oddetall
+
+    if (counter === 3) {
+        alert("Du trykket tre ganger!"); //gir en alert etter 3 trykk
+    }
+    }
+
+
+  </script>
+</body>
+</html>
